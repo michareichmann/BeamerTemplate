@@ -1,5 +1,5 @@
 \usetheme{Boadilla}
-\graphicspath{ {Pics/} }
+\graphicspath{ {pics/} }
 \makeatletter
 \def\input@path{ {sections/} }
 \makeatother
@@ -10,7 +10,7 @@
 \author[M. Reichmann]{Michael Reichmann}
 \institute[\textbf{\textit{ETH}}\scalebox{.6}{\textit{Z\"{u}rich}}]{Swiss Federal Institute of Technology Zurich}
 \AtBeginSection{\frame[noframenumbering]{\sectionpage}}
-\sisetup{detect-weight=true, detect-family=true}
+\sisetup{detect-weight=true, detect-family=true, range-units=single, range-phrase=$\ \sim\ $, separate-uncertainty=true, exponent-product=\ensuremath{\cdot}}
 
 \setbeamercolor{frametitle}{bg=date in head/foot.bg!20!white}
 
@@ -23,10 +23,7 @@
 		\includegraphics[height=.9cm]{IPA}
 	\end{figure}
 	\vspace*{-10pt}
-	\begin{figure}
-		\centering
-		\includegraphics[width=.4\textheight, angle=-90]{\inserttitlegraphic}
-	\end{figure}
+	\fig{.4}{\inserttitlegraphic}
 	\begin{block}{}
 		\centering
 		\vspace*{1pt}

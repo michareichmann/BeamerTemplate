@@ -1,10 +1,3 @@
-\newcommand{\as}{\\[14pt]}
-\newcommand{\s}{\\[7pt]}
-\newcommand{\is}{\\[2pt]}
-\newcommand{\no}{\noindent}
-\newcommand{\ka}{\hspace*{0.5cm}}
-\newcommand{\ma}{\hspace*{1cm}}
-\newcommand{\ga}{\hspace*{1.5cm}}
 \newcommand{\li}{\left|}
 \newcommand{\re}{\right|}
 \newcommand{\const}{\text{const.}}
@@ -12,6 +5,7 @@
 \newcommand{\terminal}[1]{\colorbox{black}{\textcolor{white}{{\fontfamily{phv}\selectfont \scriptsize{#1}}}}}
 \newcommand{\plugin}[1]{\textit{\flq#1\frq}}
 \newcommand{\ra}{$\rightarrow$ }
+\newcommand{\ar}{\autoref}
 \newcommand{\good}[1]{{\usebeamercolor[fg]{title}{\textbf{#1}}}}
 \newcommand{\bad}[1]{\textcolor{RedOrange}{\textbf{#1}}}
 \newcommand{\dead}[1]{\textcolor{NavyBlue}{\textbf{#1}}}
@@ -19,34 +13,26 @@
 \newcommand{\xmark}{\bad{\ding{55}}}
 \newcommand{\itemfill}{\setlength{\itemsep}{\fill}}
 \newcommand{\orderof}[1]{$\mathcal{O}\left(#1\right)$}
+\newcommand{\code}[1]{{\footnotesize\dejavu #1}}
+\newcommand{\var}[1]{\textcolor{JungleGreen}{#1}}
+\newcommand{\meth}[1]{\textcolor{RedOrange}{#1}}
+\newcommand{\incl}[1]{\textcolor{YellowGreen!70!RawSienna!100}{#1}}
+\newcommand{\str}[1]{\textcolor{MidnightBlue!60!black!100}{#1}}
+\newcommand{\tline}[1]{\noalign{\hrule height #1pt}}
+\newcommand{\fatwhite}[1]{\multicolumn{1}{c}{\textcolor{white}{\textbf{#1}}}}
+\renewcommand{\deg}{$^{\circ}$}
+\newcommand{\fpath}[1]{\textbf{\path{#1}}}
+\renewcommand\tabularxcolumn[1]{m{#1}}
+\newcommand{\alternatecolors}{\rowcolors{2}{YellowOrange!10}{ProcessBlue!10}}
 \newcommand{\missfig}[1][.5]{\begin{center} \missingfigure[figheight=#1\textheight,figwidth=#1\textheight, figcolor=white]{}\end{center}}
-\newcommand{\fig}[2]{\begin{figure}\centering\includegraphics[height={#2}\textheight]{#1}\end{figure}}
-\newcommand{\figc}[3]{\begin{figure}\centering\includegraphics[height={#2}\textheight]{#1}\caption{#3}\end{figure}}
-\newcommand{\figp}[2]{\begin{figure}\centering\includegraphics[width={#2}\textheight, angle=-90]{#1}\end{figure}}
-\newcommand{\subfig}[4][0.45]{\begin{subfigure}{{#1}\textwidth}\centering
-			\includegraphics[height={#3}\textheight]{#2}
-			\caption{#4}\end{subfigure}}
-\newcommand{\subfiga}[3][0.45]{\begin{subfigure}{{#1}\textwidth}\centering\includegraphics[height={#3}\textheight]{#2}\end{subfigure}}
-\newcommand{\subfigp}[4][0.45]{\begin{subfigure}{#1\textwidth}\centering
-			\includegraphics[width={#3}\textheight, angle=-90]{#2}
-			\caption{#4}\end{subfigure}}
-\newcommand{\subfigs}[3]{\begin{figure}\centering
-	\begin{subfigure}{0.45\textwidth}\centering\includegraphics[height={#3}\textheight]{#1}\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}\centering\includegraphics[height={#3}\textheight]{#2}\end{subfigure}
-    \end{figure}}
-\newcommand{\subfigsp}[3]{\begin{figure}\centering
-	\begin{subfigure}{0.45\textwidth}\centering\includegraphics[width={#3}\textheight, angle=-90]{#1}\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}\centering\includegraphics[width={#3}\textheight, angle=-90]{#2}\end{subfigure}
-    \end{figure}}
-\DeclareDocumentCommand{\subfigsc}{O{.45} O{.45} m m m m m}{\begin{figure}\centering
-	\begin{subfigure}{#1\textwidth}\centering\includegraphics[height={#5}\textheight]{#3}\caption{#6}\end{subfigure}
-	\begin{subfigure}{#2\textwidth}\centering\includegraphics[height={#5}\textheight]{#4}\caption{#7}\end{subfigure}
-    \end{figure}}
-\DeclareDocumentCommand{\subfigspc}{O{.45} O{.45} m m m m m}{\begin{figure}\centering
-	\begin{subfigure}{#1\textwidth}\centering\includegraphics[width={#5}\textheight, angle=-90]{#3}\caption{#6}\end{subfigure}
-	\begin{subfigure}{#2\textwidth}\centering\includegraphics[width={#5}\textheight, angle=-90]{#4}\caption{#7}\end{subfigure}
-    \end{figure}}
-\DeclareDocumentCommand{\downfigs}{O{.3} O{-10pt} m m }{\vspace*{#2}\begin{figure}\centering
-	\includegraphics[height={#1}\textheight]{#3}\\             
-	\includegraphics[height={#1}\textheight]{#4}\end{figure}\vspace*{#2}}
-
+\newcommand{\caplab}[2]{\ifthenelse{\equal{#1}{nocap}}{}{\caption{#1}}\ifthenelse{\equal{#2}{nolab}}{}{\label{#2}}}
+\newcommand{\pic}[3]{\ifthenelse{\equal{#1}{r}}{\includegraphics[width={#2\textheight}, angle=-90]{#3}}{\includegraphics[height={#2\textheight}]{#3}}}
+%SUBFIG
+\DeclareDocumentCommand{\subfig}{O{.45} O{0} m O{l} m O{nocap} O{nolab}}{\begin{subfigure}{#1\linewidth}\vspace*{#2\textheight}\centering\fig[#4]{#3}{#5}[#6][#7]\end{subfigure}}
+%SUBFIGS
+\DeclareDocumentCommand{\subfigs}{O{fig} m m O{nocap} O{nolab}}{\begin{figure}[ht!]\centering\ifthenelse{\equal{#1}{fig}}{}{#1\hspace*{.05\linewidth}}#2\hspace*{.05\linewidth}#3\caplab{#4}{#5}\end{figure}}
+%FIG
+\DeclareDocumentCommand{\fig}{O{n} m m O{nocap} O{nolab}}{\begin{figure}[h!]\centering\pic{#1}{#2}{#3}\caplab{#4}{#5}\end{figure}}
+% WRAPFIG
+\DeclareDocumentCommand{\wrapfig}{O{l} m m O{nocap} O{nolab}}{
+	\begin{wrapfigure}{#1}{#2\linewidth}\includegraphics[width={.95\linewidth}]{#3}\caplab{#4}{#5}\end{wrapfigure}}
