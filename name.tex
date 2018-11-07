@@ -1,7 +1,6 @@
 % BEGIN PREAMBEL
-\documentclass[9pt, xcolor=dvipsnames]{beamer}
+\documentclass[9pt, xcolor=dvipsnames, table]{beamer}
 \usepackage[british]{babel}
-\usepackage{multimedia}
 \input{extrapackages}
 \input{newcommands}
 \input{settings}
@@ -13,27 +12,23 @@
 
 \begin{document}
 
-% ============= TITLE PAGE =============
-\include{TitlePage}
+\begin{document}
 
-% ============= TABLE OF CONTENTS ======
-\begin{frame}%[allowframebreaks]
-	\frametitle{Table of contents}
+{\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\maketitle} % TITLE PAGE
+
+% ======= TABLE OF CONTENTS ============
+{\setbeamertemplate{headline}{}
+\begin{frame}{Table of Contents}%[allowframebreaks]
 	\tableofcontents[hideallsubsections]   % [pausesections]
-\end{frame}
-
-% ============= 1 =============
-% \section{}
-% \include{}
+\end{frame}}
 
 
-% ============= CONCLUSION =============
-\section{Conclusion}
+\include{Introduction}
+\include{TestSite}
+
 \include{Conclusion}
+\include{DelFin} % FINAL PAGE
 
-% ============= FINAL PAGE =============
-\include{DelFin}
-
-% DOCUMENT END
-\end{document}
-
+\end{document} % DOCUMENT END
