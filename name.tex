@@ -1,32 +1,27 @@
 % BEGIN PREAMBEL
 \documentclass[9pt, xcolor=dvipsnames, table]{beamer}
 \usepackage[british]{babel}
+
 \input{extrapackages}
-\input{newcommands}
 \input{settings}
+
+\input{newcommands}
+\input{HeadLine}
+\input{FootLine}
+\input{SectionPage}
+\input{TitlePageSettings}
 
 \title[short]{title}
 \subtitle{subtitle}
-\titlegraphic{bkg.jpg}
+\titlegraphic{bkg}
 % END PREAMBEL
 
 \begin{document}
 
-\begin{document}
+\include{TitlePage}
+\include{TableOfContents}
 
-{\setbeamertemplate{headline}{}
-\setbeamertemplate{footline}{}
-\maketitle} % TITLE PAGE
-
-% ======= TABLE OF CONTENTS ============
-{\setbeamertemplate{headline}{}
-\begin{frame}{Table of Contents}%[allowframebreaks]
-	\tableofcontents[hideallsubsections]   % [pausesections]
-\end{frame}}
-
-
-\include{Introduction}
-\include{TestSite}
+% \include{}
 
 \include{Conclusion}
 \include{DelFin} % FINAL PAGE
