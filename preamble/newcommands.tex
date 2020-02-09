@@ -24,7 +24,7 @@
 \newcommand{\fpath}[1]{\textbf{\path{#1}}}
 \renewcommand\tabularxcolumn[1]{m{#1}}
 \newcommand{\alternatecolors}{\rowcolors{2}{gray!5}{gray!15}}
-\newcommand{\missfig}[1][.5]{\begin{center} \missingfigure[figheight=#1\textheight,figwidth=#1\textheight, figcolor=white]{}\end{center}}
+\newcommand{\missfig}[1][.5]{\begin{center} \missingfigure[figheight=#1\textheight,figwidth=#1*1.3\textheight, figcolor=none, bordercolor=none]{}\end{center}}
 \newcommand{\caplab}[2]{\ifthenelse{\equal{#1}{nocap}}{}{\caption{#1}}\ifthenelse{\equal{#2}{nolab}}{}{\label{#2}}}
 \newcommand{\pic}[3]{\ifthenelse{\equal{#1}{r}}{\includegraphics[width={#2\textheight}, angle=-90]{#3}}{\includegraphics[height={#2\textheight}]{#3}}}
 %SUBFIG
@@ -44,6 +44,3 @@
 		\end{tabular}
 		\caplab{#3}{#4}
 	\end{table}}
-\DeclareSIUnit\mhzcm{\mega\hertz\per\centi\meter^2}
-\DeclareSIUnit\khzcm{\kilo\hertz\per\centi\meter^2}
-\DeclareSIUnit\ncm{n\per\centi\meter^2}

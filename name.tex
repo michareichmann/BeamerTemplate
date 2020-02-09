@@ -1,29 +1,21 @@
-% BEGIN PREAMBEL
 \documentclass[9pt, xcolor=dvipsnames, table]{beamer}
 \usepackage[british]{babel}
 
-\input{extrapackages}
-\input{settings}
+\input{preamble/packages}
+\input{preamble/general}
 
-\input{newcommands}
-\input{HeadLine}
-\input{FootLine}
-\input{SectionPage}
-\input{TitlePageSettings}
-
-\title[short]{title}
+\title[short title]{title}
 \subtitle{subtitle}
-\titlegraphic{bkg}
-% END PREAMBEL
+\titlegraphic{none}
 
 \begin{document}
 
-\include{TitlePage}
-\include{TableOfContents}
+\include{titlepage}
+\include{toc}
 
 % \include{}
 
-\include{Conclusion}
-\include{DelFin} % FINAL PAGE
+\include{conclusion}
+\include{finalpage} % FINAL PAGE
 
 \end{document} % DOCUMENT END
