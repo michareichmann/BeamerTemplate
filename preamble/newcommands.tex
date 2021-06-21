@@ -13,7 +13,7 @@
 \newcommand{\xmark}{\bad{\ding{55}}}
 \newcommand{\itemfill}{\setlength{\itemsep}{\fill}}
 \newcommand{\orderof}[1]{$\mathcal{O}\left(#1\right)$}
-\newcommand{\code}[1]{{\footnotesize\dejavu #1}}
+\newcommand{\code}[1]{{\footnotesize\textcolor{JungleGreen}{#1}}}
 \newcommand{\var}[1]{\textcolor{JungleGreen}{#1}}
 \newcommand{\meth}[1]{\textcolor{RedOrange}{#1}}
 \newcommand{\incl}[1]{\textcolor{YellowGreen!70!RawSienna!100}{#1}}
@@ -44,3 +44,15 @@
 		\end{tabular}
 		\caplab{#3}{#4}
 	\end{table}}
+	
+	
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{calc}
+\newlength{\myl}
+\mdfsetup{roundcorner=6pt, backgroundcolor=gray!5, shadow=true, shadowsize=3pt, linecolor=black!10, leftmargin=0pt, innerrightmargin=0pt, rightmargin=0pt, innerleftmargin=4pt, skipabove=0pt, skipbelow=0pt, nobreak=true}
+\usetikzlibrary{shadows}
+\renewcommand{\todo}[1]{
+  \settowidth{\myl}{TODO: #1}\hspace*{-5pt}
+\begin{minipage}{\the\myl} \begin{mdframed}\small\color{BrickRed}TODO: #1 \end{mdframed}\end{minipage}}
+ 
+

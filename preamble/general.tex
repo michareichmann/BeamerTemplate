@@ -1,5 +1,5 @@
 \usetheme{Boadilla}
-\graphicspath{ {figures/} }
+\graphicspath{ {figures/} {figures/main/} }
 \makeatletter
 \def\input@path{ {sections/} {preamble/}  {frontbackmatter/}}
 \makeatother
@@ -23,6 +23,7 @@
 \input{customtitlepage}
 \input{headline}
 \input{footline}
+\input{sectionpage}
 \addtobeamertemplate{footline}{\hypersetup{allcolors=.}}{}
 
 % --------------- UNITS---------------------------------------
@@ -33,3 +34,5 @@
 \DeclareSIUnit\ev{\electronvolt}
 \DeclareSIUnit\gev{\giga\ev}
 \DeclareSIUnit\mev{\mega\ev}
+\DeclareSIUnit\permille{\text{\textperthousand}}
+

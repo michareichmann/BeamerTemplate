@@ -3,7 +3,7 @@
   \vspace*{-20pt}
 	\begin{tikzpicture}[remember picture,overlay]
 		\node[at=(current page.center), opacity=0.3] {
-			\includegraphics[width=1.13\paperwidth]{background}};
+			\includegraphics[width=1.0\paperwidth]{front}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[.2\textheight]{.4\textwidth}
@@ -18,7 +18,8 @@
 	\end{minipage}\vspace*{20pt}
 	
 	\begin{minipage}[.4\textheight]{\textwidth}
-	  \ifthenelse{\equal{\inserttitlegraphic}{none}}{\missfig[.4]}{\fig{.4}{\inserttitlegraphic}}
+      \vspace*{.4\textheight}
+% 	  \ifthenelse{\equal{\inserttitlegraphic}{none}}{\missfig[.4]}{\fig{.2}{\inserttitlegraphic}}
 	\end{minipage}
 	
 	\begin{block}{}
