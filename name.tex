@@ -1,8 +1,7 @@
 \documentclass[9pt, xcolor=dvipsnames, table]{beamer}
-\usepackage[british]{babel}
 
 \input{preamble/packages}
-\input{preamble/general}
+\input{preamble/main}
 
 \title[short title]{title}
 \subtitle{meeting}
@@ -11,14 +10,14 @@
 \begin{document}
 
 % ---------- FRONTMATTER ---------------------------------------------------------------------
-\include{titlepage}
-\include{toc}
+\include{frontmatter/titlepage}
+\include{frontmatter/toc}
 
 % ---------- MAINMATTER ----------------------------------------------------------------------
-% \include{}
-\include{conclusion}
+% \include{sections/}
+\include{sections/conclusion}
 
 % ---------- BACKMATTER ----------------------------------------------------------------------
-\include{finalpage}
+\include{backmatter/finalpage}
 
 \end{document} % DOCUMENT END
